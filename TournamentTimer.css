@@ -1,0 +1,639 @@
+body {
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* The Title */
+.title {
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30px;
+    font-size: 300%;
+    color: white;
+}
+
+/* The Stage the Timer is currently on */
+.stage {
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    font-size: 200%;
+    transform: translate(-50%, 0%);
+}
+
+/* Background for the stage text */
+.stageBackground {
+    background-color: yellowgreen;
+    width: 300px;
+    height: 45px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 20px;
+}
+
+/* The tag that says 'Room 1 Round 1 Match A' that Andrew told us to add */
+.tag {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    font-size: 150%;
+    transform: translate(-50%, 0%);
+}
+
+/* Start Button */
+.startButton {
+    background-color: green;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translate(0%, -50%);
+}
+.startButton:hover {
+    background-color: rgb(8, 150, 8);
+}
+.startButton::before {
+    content: 'Start';
+    color:black;
+    position: absolute;
+    font-weight: bold;
+    font-size: 32px;
+    left: 23px;
+    top: 33px;
+}
+.startButtonOutline {
+    background-color: black;
+    height: 124px;
+    width: 124px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 38px;
+    transform: translate(0%, -50%);
+}
+
+/* Pause Button */
+.pauseButton {
+    background-color: rgb(168, 7, 7);
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translate(0%, -50%);
+}
+.pauseButton:hover {
+    background-color: rgb(214, 10, 10);
+}
+.pauseButton::before {
+    content: 'Pause';
+    color:black;
+    position: absolute;
+    font-weight: bold;
+    font-size: 32px;
+    left: 18px;
+    top: 33px;
+}
+
+/* Reset Selection Button */
+.resetButton {
+    background-color: rgb(223, 145, 0);
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+.resetButton::before {
+    content: 'Reset';
+    color:black;
+    position: absolute;
+    top: 33px;
+    left: 18px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.resetButton:hover {
+    background-color: rgb(255, 166, 0);;
+}
+.resetButtonOutline {
+    background-color: black;
+    height: 124px;
+    width: 124px;
+    border-radius: 50%;
+    position: absolute;
+    right: 38px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+/* Go back while in select mode */
+.resetBack {
+    background-color: rgb(185, 13, 13);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 220px;
+    visibility: hidden;
+}
+
+/* Reset Timer Button */
+.resetTimer {
+    height:60px;
+    width:120px;
+    border-radius: 90px 90px 0 0;
+    background:blue;
+    position: absolute;
+    top: 15px;
+    left: 220px;
+    border: 3px solid black;
+}
+.resetTimer:hover {
+    background: aqua;
+}
+.resetTimer::before {
+    content: "Timer";
+    color: black;
+    position: absolute;
+    top: 15px;
+    left: 28px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Reset Stage Button */
+.resetStage {
+    height:65px;
+    width:120px;
+    border-radius: 0 0 90px 90px;
+    background:blue;
+    position: absolute;
+    bottom: 15px;
+    left: 220px;
+    border: 3px solid black;
+}
+.resetStage:hover {
+    background: aqua;
+}
+.resetStage::before {
+    content: "Stage";
+    color: black;
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* The rectangle behind the start and reset buttons */
+.rectangleStart {
+    position: absolute;
+    width: 380px;
+    height: 150px;
+    background-color: rgb(67, 70, 75);
+    outline-style: solid;
+    outline-color: rgb(50, 52, 54);
+    outline-width: 2px;
+    right: 56.5%;
+    top: 75%;
+}
+
+/* The rectangle behind the next and previous buttons */
+.rectangleStage {
+    position: absolute;
+    width: 380px;
+    height: 150px;
+    background-color: rgb(67, 70, 75);
+    outline-style: solid;
+    outline-color: rgb(50, 52, 54);
+    outline-width: 2px;
+    left: 56.5%;
+    top: 75%;
+}
+
+/* Reporter info on the left */
+.rectangleReporter {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background-color: rgb(255,218,185);
+    left: 15%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.rectangleReporter::before {
+    content: '';
+    position: absolute;
+    border-bottom: 50px solid rgb(255,218,185);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0;
+    width: 160px;
+    bottom: 80px;
+}
+.rectangleReporter::after {
+    content: 'Reporter';
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    position: absolute;
+    height: 0;
+    left: 23%;
+    bottom: 120px;
+    width: 200px;
+    font-size: 24px;
+}
+.rectangleReporterTeam {
+    color: black;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.rectangleReporterPerson {
+    color: black;
+    white-space: nowrap;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+}
+.rectangleReporterOutline {
+    position: absolute;
+    width: 206px;
+    height: 86px;
+    background-color: grey;
+    left: 14.85%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.rectangleReporterOutline::before {
+    content: '';
+    position: absolute;
+    border-bottom: 57px solid grey;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0;
+    width: 171px;
+    bottom: 80px;
+}
+
+/* Opponent info on the right */
+.rectangleOpponent {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background-color: rgb(255,218,185);
+    right: 15%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.rectangleOpponent::before {
+    content: '';
+    position: absolute;
+    border-bottom: 50px solid rgb(255,218,185);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0;
+    width: 160px;
+    bottom: 80px;
+}
+.rectangleOpponent::after {
+    content: 'Opponent';
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    position: absolute;
+    height: 0;
+    left: 20%;
+    bottom: 120px;
+    width: 200px;
+    font-size: 24px;
+}
+.rectangleOpponentTeam {
+    color: black;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.rectangleOpponentPerson {
+    color: black;
+    white-space: nowrap;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+}
+.rectangleOpponentOutline {
+    position: absolute;
+    width: 206px;
+    height: 86px;
+    background-color: grey;
+    right: 14.85%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.rectangleOpponentOutline::before {
+    content: '';
+    position: absolute;
+    border-bottom: 57px solid grey;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0;
+    width: 171px;
+    bottom: 80px;
+}
+
+/* The overtime text */
+.overtime {
+    position: absolute;
+    color: rgb(185, 15, 15);
+    font-size: 120%;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+}
+
+/* Previous Stage Button */
+.stagePrevious {
+    width: 0;
+    height: 0;
+	border-top: 40px solid transparent;
+	border-right: 60px solid rgb(3, 3, 180);
+    border-bottom: 40px solid transparent;
+    position: absolute;
+    top: 45px;
+    left: 9px;
+}
+.stagePrevious:hover {
+    border-right: 60px solid rgb(32, 32, 255);
+}
+.stagePrevious::before {
+    content: "";
+    width: 100px;
+    height: 40px;
+    background-color: rgb(3, 3, 180);
+    position: absolute;
+    bottom: -20px;
+    left: 55px;
+}
+.stagePrevious:hover::before {
+    background-color: rgb(32, 32, 255);
+}
+.stagePrevious::after {
+    content: "Previous";
+    position: absolute;
+    font-weight: bold;
+    font-size: 150%;
+    bottom: -16px;
+    left: 30px;
+    color: white;
+}
+.stagePreviousOutline {
+    width: 0;
+    height: 0;
+	border-top: 45px solid transparent;
+	border-right: 69px solid black;
+    border-bottom: 45px solid transparent;
+    position: absolute;
+    top: 40px;
+    left: 4px;
+}
+.stagePreviousOutline::before {
+    content: "";
+    width: 110px;
+    height: 46px;
+    background-color: black;
+    position: absolute;
+    bottom: -23px;
+    left: 54px;
+}
+
+/* Next Stage Button */
+.stageNext {
+    width: 0;
+    height: 0;
+	border-top: 40px solid transparent;
+	border-left: 60px solid rgb(3, 3, 180);
+    border-bottom: 40px solid transparent;
+    position: absolute;
+    top: 45px;
+    right: 9px;
+}
+.stageNext:hover {
+    border-left: 60px solid rgb(32, 32, 255);
+}
+.stageNext::before {
+    content: "";
+    width: 100px;
+    height: 40px;
+    background-color: rgb(3, 3, 180);
+    position: absolute;
+    bottom: -20px;
+    right: 60px;
+}
+.stageNext:hover::before {
+    background-color: rgb(32, 32, 255);
+}
+.stageNext::after {
+    content: "Next";
+    position: absolute;
+    font-weight: bold;
+    font-size: 150%;
+    bottom: -16px;
+    right: 60px;
+    color: white;
+}
+.stageNextOutline {
+    width: 0;
+    height: 0;
+	border-top: 45px solid transparent;
+	border-left: 69px solid black;
+    border-bottom: 45px solid transparent;
+    position: absolute;
+    top: 40px;
+    right: 3px;
+}
+.stageNextOutline::before {
+    content: "";
+    width: 110px;
+    height: 46px;
+    background-color: black;
+    position: absolute;
+    bottom: -23px;
+    right: 59px;
+}
+
+/* The Stage text in the stage panel */
+.stageText {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    visibility: visible;
+}
+
+/* Timer CSS */
+.circleText{
+    font-family: sans-serif;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+  
+.base-timer {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+  
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+  
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+  
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+  
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+  
+.base-timer__path-remaining.green {
+    color: rgb(0, 153, 0);
+}
+  
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+  
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.base-timer__path-remaining.grey {
+    color: grey;
+}
+.base-timer__label {
+    color: white;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+}
+
+/* The sound icon in the top right */
+.soundIcon {
+    position: absolute;
+    top: 37px;
+    right: 54px;
+    width: 45px;
+    height: 45px;
+}
+.soundIconBackground {
+    position: absolute;
+    top: 33px;
+    right: 48px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 10px;
+}
+/* the Edit Icon in the top right */
+.editIcon {
+    position: absolute;
+    top: 35px;
+    right: 115px;
+    width: 50px;
+    height: 50px;
+}
+.editIconBackground {
+    position: absolute;
+    top: 33px;
+    right: 114px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 10px;
+}
+.editIconInput {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    visibility: hidden;
+}
+.editIconInputText {
+    font-size: 20px;
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    color: white;
+    visibility: hidden;
+}
+.editIconInputButton {
+    position: absolute;
+    top: 190px;
+    right: 160px;
+    width: 60px;
+    height: 25px;
+    background-color: aqua;
+    visibility: hidden;
+}
+.brightnessIcon {
+    position: absolute;
+    top: 36px;
+    right: 193px;
+    width: 30px;
+    height: 47px;
+}
+.brightnessIconBackground {
+    position: absolute;
+    top: 33px;
+    right: 180px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 10px;
+}
